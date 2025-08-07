@@ -1,4 +1,4 @@
-# Writeup - Fresh Market Web Shell Upload
+# Writeup - PhotoShare Web Shell Upload
 
 ## Vulnerability
 

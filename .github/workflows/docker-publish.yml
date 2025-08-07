@@ -1,4 +1,5 @@
 name: Build and Push Docker image
+
 on:
   push:
     branches:
@@ -24,15 +25,15 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./deploy
+          context: .
           file: ./deploy/Dockerfile
           push: true
-          tags: cyberctf/photoshare-lab:latest
+          tags: cyberctf/photoshare-web-shell:latest
       
       - name: Update DockerHub README
         uses: peter-evans/dockerhub-description@v3
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PAT }}
-          repository: cyberctf/photoshare-lab
+          repository: cyberctf/photoshare-web-shell
           readme-filepath: ./deploy/README.md
